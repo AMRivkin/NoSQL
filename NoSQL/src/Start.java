@@ -21,22 +21,18 @@ public class Start {
 		String storeName = "mystore";
 		
 		NoSQL GRIBstore = new NoSQL(hosts, storeName);
-		boolean success = GRIBstore.Connect();
-	
-		
+		boolean success = GRIBstore.Connect();		
 		
 		if (success)
 		{
 		
 			Collection<File> files = FileUtils.listFiles(new File(args[0]), null, true);		
-			
-			
-			for (File file : files) {
-				GRIBstore.putFile("GRIB/"+file.getParentFile().getName(), file.getName(), file.toPath());
+						for (File file : files) {
+			GRIBstore.putFile("GRIB", file.getName(), file.toPath());
 			}
 			
 			//GRIBstore.deleteAll();
-			//GRIBstore.downloadAll("C:\\temp\\");
+			GRIBstore.downloadAll("C:\\temp\\");
 
 		}
 		

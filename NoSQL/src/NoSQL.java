@@ -105,6 +105,7 @@ public class NoSQL {
 		byte[] data;
 		try {
 			data = Files.readAllBytes(file);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -144,6 +145,7 @@ public class NoSQL {
 		Key myKey = Key.createKey(majorPart, minorPart);
 		try {
 			FileUtils.writeByteArrayToFile(file, kvstore.get(myKey).getValue().getValue());
+		
 		} catch (FaultException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -216,7 +218,7 @@ public class NoSQL {
 		    }			
 		}
 		
-		
+	
 	
 }
 
